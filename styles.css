@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #1877f2;
+}
+
+h2 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  color: #1877f2;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px;
+  background-color: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3b5998;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 4px;
+}
+
+li span {
+  margin-right: 16px;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+form input[type="text"],
+form input[type="date"],
+form select {
+  padding: 8px;
+  margin-right: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 8px;
+  background-color: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #3b5998;
+}
+
+#addTodoForm {
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap to the next line when needed */
+  gap: 8px; /* Add some spacing between form elements */
+}
+
+#subtaskInput,
+button {
+  flex: 1; /* Expand to fill the available space */
+}
+
+/* CSS for Subtask Container */
+#subtaskList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* CSS for Subtask List Items */
+#subtaskList li {
+  margin: 4px 0; /* Add some vertical spacing between subtasks */
+}
+
+/* CSS for editing Todo layout */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtasks {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.subtask-input,
+.add-subtask-button {
+  margin-bottom: 8px;
+}
+
+/* Optional styling for todo list items */
+li {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  margin: 8px 0;
+  color: #1877f2;
+  font-weight: bold;
+}

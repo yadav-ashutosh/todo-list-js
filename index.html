@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchTodo()">Search</button>
+  </div>
+  <h1>Todo List</h1>
+  <form id="addTodoForm">
+    <input type="text" id="todoInput" placeholder="Enter Todo..." required>
+    <input type="text" id="categoryInput" placeholder="Category...">
+    <input type="date" id="dueDateInput">
+    <select id="prioritySelect">
+      <option value="low">Low Priority</option>
+      <option value="medium">Medium Priority</option>
+      <option value="high">High Priority</option>
+    </select>
+    <br>
+    <input type="text" id="subtaskInput" placeholder="Add Subtask...">
+    <button type="button" onclick="addSubtask()">Add Subtask</button>
+    <br>
+    <button type="button" onclick="addTodo()">Add Todo</button>
+    <!-- Subtask Container -->
+    <ul id="subtaskList"></ul>
+  </form>
+
+  <!-- Drag and drop lists -->
+  <div class="lists-container">
+    <div class="todo-column">
+      <h2>Todo</h2>
+      <ul id="todoList">
+        <!-- Todo items will be added here -->
+      </ul>
+    </div>
+    <div class="backlog-column">
+      <h2>Backlog</h2>
+      <ul id="backlogList" >
+        <!-- Backlog items will be added here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Activity log -->
+  <div class="activity-log">
+    <h2>Activity log</h2>
+    <ul id="activityLog"></ul>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <script src="todo.js"></script>
+  <script src="renderTodo.js"></script>
+  <script src="subtask.js"></script>
+  <script src="activity.js"></script>
+  <script src="search.js"></script>
+</body>
+</html>
