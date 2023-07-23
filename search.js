@@ -1,6 +1,6 @@
-// Add an event listener for the search button
+
 document.getElementById('searchInput').addEventListener('keydown', function (event) {
-  // Check if the Enter key is pressed (key code 13)
+
   if (event.keyCode === 13) {
     searchTodo();
   }
@@ -11,7 +11,7 @@ function searchTodo() {
 
   // Show the "Add Todo" section
   document.getElementById('addTodoForm').style.display = 'none';
-  // Filter the todos based on the search keyword
+
   const filteredTodos = todos.filter(todo => {
     const todoText = todo.text.toLowerCase();
     // Check if the todo text or description contains the search keyword
@@ -22,7 +22,7 @@ function searchTodo() {
   const todoList = document.getElementById('todoList');
   todoList.innerHTML = '';
 
-  // Render the filtered todo list
+  
   filteredTodos.forEach(todo => {
     const li = document.createElement('li');
     li.innerHTML = `

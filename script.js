@@ -14,7 +14,7 @@ function deleteTodo(todoId) {
     const todoText = todoToDelete.text;
 
     todos = todos.filter(todo => todo.id !== todoId);
-    // Add an activity log entry for deleting the todo
+    
     const description = `Deleted Todo: ${todoText}`;
     addActivityLogEntry('delete', description);
 

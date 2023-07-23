@@ -21,7 +21,7 @@ function addTodo() {
   const subtasks = Array.from(subtaskListItems).map(li => li.textContent.trim());
 
   const newTodo = {
-    id: Date.now(), // Generate a new ID (you can implement your custom ID generation logic)
+    id: Date.now(), 
     text: todoText,
     category: category,
     dueDate: dueDate,
