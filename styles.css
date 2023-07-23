@@ -4,9 +4,29 @@ body {
   margin: 0;
   padding: 0;
 }
-
+.app {
+  display: flex;
+  flex-direction: row;
+}
 .container {
+  display: flex;
+  flex-direction: column;
   max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.todol {
+  display: flex;
+  flex-direction: column;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 5px;
@@ -15,6 +35,7 @@ body {
 }
 
 h1 {
+	margin-top: 20px;
   text-align: center;
   color: #1877f2;
 }
@@ -150,3 +171,29 @@ li {
   color: #1877f2;
   font-weight: bold;
 }
+
+/* Add styles for the reminder popup */
+.reminder-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.close-btn {
+  margin-top: 5px;
+  background-color: #ffffff;
+  color: #ff0000;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+
+
+

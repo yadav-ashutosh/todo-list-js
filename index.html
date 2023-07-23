@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+<div class="app">
   <div class="container">
   <div class="search-bar">
     <input type="text" id="searchInput" placeholder="Search...">
@@ -37,21 +38,32 @@
         <!-- Todo items will be added here -->
       </ul>
     </div>
+    </div>
+    </div>
+    <div class="container2">
     <div class="backlog-column">
       <h2>Backlog</h2>
       <ul id="backlogList" >
         <!-- Backlog items will be added here -->
       </ul>
     </div>
-  </div>
+ 
 
   <!-- Activity log -->
   <div class="activity-log">
     <h2>Activity log</h2>
     <ul id="activityLog"></ul>
   </div>
-</div>
 
+  <!-- Add a container for the reminder popup -->
+<div id="reminderPopup" class="reminder-popup">
+  <span class="reminder-text">Reminder: You have a task due today, check todo list to complete the task or change the due date for the task!</span>
+  <button class="close-btn" onclick="closeReminder()">Close</button>
+</div>
+</div>
+</div>
+</div>
+ </div>
   <script src="script.js"></script>
   <script src="todo.js"></script>
   <script src="renderTodo.js"></script>

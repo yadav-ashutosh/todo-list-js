@@ -7,6 +7,8 @@ function renderTodoList() {
 
   todos.forEach(todo => {
     const li = document.createElement('li');
+    const subtaskList = todo.subtasks.map(subtask => `<li>${subtask}</li>`).join('');
+
     if (todo.editing) {
       // Render editable form for the todo item
       li.innerHTML = `
@@ -29,13 +31,24 @@ function renderTodoList() {
     } else {
       // Render non-editable todo item
       li.innerHTML = `
+       <div class="todol">  
+      <div>
         <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleCompleted(${todo.id}, this)">
         <span>${todo.text}</span>
         <span>Due Date: ${todo.dueDate}</span>
         <span>Priority: ${todo.priority}</span>
         <button onclick="editTodo(${todo.id})">Edit</button>
         <button onclick="deleteTodo(${todo.id})">Delete</button>
+        </div>        
+        <div class="subtask">
+        <ul>${subtaskList}</ul>
+        </div>
+        </div>
       `;
+       const today = new Date().toISOString().slice(0, 10);
+    if (todo.dueDate === today) {
+      showReminder();
+    }
     }
 
     if (todo.editing) {

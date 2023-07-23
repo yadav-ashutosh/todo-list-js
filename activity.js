@@ -19,3 +19,13 @@ function renderActivityLog() {
     activityLogList.appendChild(li);
   });
 }
+
+function showReminder() {
+  const reminderPopup = document.getElementById('reminderPopup');
+  reminderPopup.style.display = 'block';
+}
+
+function closeReminder() {
+  const reminderPopup = document.getElementById('reminderPopup');
+  reminderPopup.style.display = 'none';
+}
