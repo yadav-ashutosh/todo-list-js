@@ -29,17 +29,50 @@
     <!-- Subtask Container -->
     <ul id="subtaskList"></ul>
   </form>
+ 
+<div>
+        <label for="sortOptionSelect">Sort by:</label>
+        <select id="sortOptionSelect" onchange="sortTodos()">
+            <option value="dueDate">Due Date</option>
+            <option value="priority">Priority</option>
+            <option value="category">Category</option>
+        </select>
+    </div>
+    <div>
+        <label for="dateFilter">Filter by Due Date:</label>
+        <input type="date" id="dateFilter">
+        <button onclick="filterTodos('date')">Apply</button>
+    </div>
 
-  <!-- Drag and drop lists -->
+    <div>
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter">
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+        </select>
+        <button onclick="filterTodos('category')">Apply</button>
+    </div>
+
+    <div>
+        <label for="priorityFilter">Filter by Priority:</label>
+        <select id="priorityFilter">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <button onclick="filterTodos('priority')">Apply</button>
+    </div>
+
   <div class="lists-container">
     <div class="todo-column">
       <h2>Todo</h2>
       <ul id="todoList">
-        <!-- Todo items will be added here -->
+       
       </ul>
     </div>
     </div>
     </div>
+    <!-- backlog -->
     <div class="container2">
     <div class="backlog-column">
       <h2>Backlog</h2>
@@ -55,7 +88,6 @@
     <ul id="activityLog"></ul>
   </div>
 
-  <!-- Add a container for the reminder popup -->
 <div id="reminderPopup" class="reminder-popup">
   <span class="reminder-text">Reminder: You have a task due today, check todo list to complete the task or change the due date for the task!</span>
   <button class="close-btn" onclick="closeReminder()">Close</button>

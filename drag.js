@@ -1,36 +1,49 @@
-let draggedTodoId = null;
+var list = document.getElementById('todoList')
+var base, randomized, dragging, draggedOver;
+var isRight = 'Not In Order!';
 
-function allowDrop(event) {
-  event.preventDefault();
+randomized = a.sort(() => Math.random() - 0.5)
+
+const genRandom = (array) => {
+  base = array.slice()
+  randomized = array.sort(() => Math.random() - 0.5)
+  if (randomized.join("") !== base.join("")){
+      renderItems(randomized)
+   } else {
+     
+     genRandom()
+   }
 }
 
-function drag(event, todoId) {
-  draggedTodoId = todoId;
+const renderItems = (data) =>{
+  document.getElementById('isRight').innerText = isRight;
+  list.innerText = '';
+  data.forEach(item=>{
+    var node = document.createElement("li"); 
+    node.draggable = true;
+    node.addEventListener('drag', setDragging); 
+    node.addEventListener('dragover', setDraggedOver);
+    node.addEventListener('drop', compare);
+    node.innerText = item;
+    list.appendChild(node);
+  })
 }
 
-function drop(event, targetListId) {
-  event.preventDefault();
-  const targetList = document.getElementById(targetListId);
-  const targetTodoIndex = todos.findIndex(todo => todo.id === draggedTodoId);
-
-  if (targetTodoIndex !== -1) {
-    // Remove the dragged todo from the original list
-    todos.splice(targetTodoIndex, 1);
-
-    // Find the index where the todo should be inserted in the target list
-    const indexToInsert = Array.from(targetList.children).findIndex(
-      li => li.contains(event.target) || li === event.target
-    );
-
-    // Insert the dragged todo into the target list at the calculated index
-    if (indexToInsert >= 0) {
-      todos.splice(indexToInsert, 0, draggedTodoId);
-    } else {
-      // If the todo is dropped at the end of the list, push it to the end of the array
-      todos.push(draggedTodoId);
-    }
-
-    // Re-render the updated todo list
-    renderTodoList();
-  }
+const setDragging = (e) =>{
+  dragging = parseInt(e.target.innerText)
 }
+function setDraggedOver(e) {
+  e.preventDefault();
+  draggedOver = parseInt(e.target.innerText)
+}
+const compare = (e) =>{
+  var index1 = randomized.indexOf(dragging);
+  var index2 = randomized.indexOf(draggedOver);
+  randomized.splice(index1, 1)
+  randomized.splice(index2, 0, dragging)
+ 
+  isRight = randomized.join("") === base.join("") 
+    ? 'In Order!': 'Not In Order!'
+  
+  renderItems(randomized)
+};

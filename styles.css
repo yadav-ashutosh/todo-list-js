@@ -125,22 +125,21 @@ form button:hover {
 
 #subtaskInput,
 button {
-  flex: 1; /* Expand to fill the available space */
+  flex: 1; 
 }
 
-/* CSS for Subtask Container */
 #subtaskList {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* CSS for Subtask List Items */
+
 #subtaskList li {
-  margin: 4px 0; /* Add some vertical spacing between subtasks */
+  margin: 4px 0; 
 }
 
-/* CSS for editing Todo layout */
+
 .edit-form {
   display: flex;
   flex-direction: column;
@@ -157,7 +156,6 @@ button {
   margin-bottom: 8px;
 }
 
-/* Optional styling for todo list items */
 li {
   background-color: #fff;
   padding: 10px;
@@ -172,7 +170,6 @@ li {
   font-weight: bold;
 }
 
-/* Add styles for the reminder popup */
 .reminder-popup {
   position: fixed;
   top: 20px;

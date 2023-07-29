@@ -53,7 +53,7 @@ function saveTodo(todoId, event) {
     todo.category = inputs[1].value.trim();
     todo.dueDate = inputs[2].value;
     todo.priority = select.value;
-    todo.subtasks = Array.from(inputs).slice(3).map(input => input.value.trim()); // Save subtasks
+    todo.subtasks = Array.from(inputs).slice(3).map(input => input.value.trim()); 
     todo.editing = false;
     renderTodoList();
   }
@@ -62,7 +62,7 @@ function saveTodo(todoId, event) {
 function addSubtaskInput(todoId) {
   const todo = todos.find(todo => todo.id === todoId);
   if (todo) {
-    todo.subtasks.push(''); // Add an empty subtask input
+    todo.subtasks.push(''); 
     renderTodoList();
   }
 }

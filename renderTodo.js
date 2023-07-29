@@ -10,7 +10,7 @@ function renderTodoList() {
     const subtaskList = todo.subtasks.map(subtask => `<li>${subtask}</li>`).join('');
 
     if (todo.editing) {
-      // Render editable form for the todo item
+      
       li.innerHTML = `
         <form onsubmit="saveTodo(${todo.id}, event)">
           <input type="text" value="${todo.text}" required>
@@ -29,7 +29,7 @@ function renderTodoList() {
         </form>
       `;
     } else {
-      // Render non-editable todo item
+     
       li.innerHTML = `
        <div class="todol">  
       <div>
@@ -68,7 +68,6 @@ function renderTodoList() {
       addSubtaskButton.setAttribute('class', 'add-subtask-button');
     }
 
-    // Append the todo item to the appropriate list
     if (todo.dueDate !== '') {
       if (new Date(todo.dueDate) < today) {
         backlogList.appendChild(li);
@@ -82,17 +81,7 @@ function renderTodoList() {
 
 }
 
-function addSubtaskInput(todoId) {
-  const todo = todos.find(todo => todo.id === todoId);
-  if (todo) {
-    const subtasksDiv = document.querySelector(`[data-todo-id="${todoId}"] .subtasks`);
-    const subtaskInput = document.createElement('input');
-    subtaskInput.type = 'text';
-    subtaskInput.setAttribute('class', 'subtask-input');
-    subtaskInput.required = true;
-    subtasksDiv.insertBefore(subtaskInput, subtasksDiv.lastElementChild);
-  }
-}
+
 
 
 

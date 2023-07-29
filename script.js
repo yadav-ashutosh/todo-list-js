@@ -34,16 +34,15 @@ function editTodo(todoId) {
   renderTodoList();
 }
 
-// Other functions like filtering by due date and category need to be implemented.
-
-// Load todos from local storage on page load
 document.addEventListener('DOMContentLoaded', () => {
   const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
   todos = storedTodos;
   renderTodoList();
 });
 
-// Save todos to local storage whenever the todo list changes
+
 window.addEventListener('beforeunload', () => {
   localStorage.setItem('todos', JSON.stringify(todos));
 });
+
+
